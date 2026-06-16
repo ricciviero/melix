@@ -1,0 +1,28 @@
+# Ambiente LOCALE — MacBook M1 Pro (Apple Silicon, MPS)
+# Per: sviluppo, proof-of-life, tokenizer, preprocessing, inferenza, LoRA piccola.
+# NON per pretraining vero (→ cloud, requirements-cloud.txt).
+
+# Core
+torch                 # backend MPS su Apple Silicon (no CUDA)
+numpy
+pyyaml                # config.yaml degli esperimenti
+tqdm
+
+# Tokenizer
+sentencepiece
+
+# Dati (in streaming — NON scaricare interi sul SSD da 512GB)
+datasets
+huggingface-hub
+
+# Fine-tuning / inferenza su Apple Silicon
+mlx                   # framework Apple
+mlx-lm                # inferenza + LoRA su Mac
+
+# Export / serving locale
+onnx
+onnxruntime
+
+# Eval / logging
+tensorboard
+# wandb               # opzionale (logging cloud)

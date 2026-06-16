@@ -1,0 +1,30 @@
+# Ambiente CLOUD — GPU NVIDIA (CUDA), per pretraining / SFT / DPO su scala.
+# Installa su RunPod/Vast/Lambda/Modal (immagine con CUDA). NON su Mac.
+
+# Core
+torch                 # build CUDA (la fornisce l'immagine del provider)
+numpy
+pyyaml
+tqdm
+
+# Tokenizer / dati
+sentencepiece
+datasets
+huggingface-hub
+
+# Performance training
+# flash-attn          # attenzione veloce (richiede build CUDA compatibile)
+accelerate            # multi-GPU / mixed precision
+# deepspeed           # opzionale, ZeRO per scala grande
+
+# Fine-tuning / alignment
+trl                   # SFTTrainer / DPOTrainer
+peft                  # LoRA/QLoRA
+# transformers        # se si usano modelli/utility HF
+
+# Export
+onnx
+onnxruntime-gpu       # export/inferenza ONNX su GPU
+
+# Logging
+wandb

@@ -1,0 +1,51 @@
+# Ambienti Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Storage locale di fallback (quando il disco esterno non è montato)
+_local_storage/
+
+# Dataset e shard (enormi — mai in git; vivono sul disco esterno "Archivio")
+data/
+datasets/
+*.bin
+*.idx
+*.arrow
+*.parquet
+
+# Checkpoint e pesi (enormi)
+checkpoints/
+ckpt/
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.onnx.data
+*.gguf
+
+# Tokenizer addestrati (rigenerabili) — tieni solo i config
+*.model
+*.vocab
+
+# Log / esperimenti
+wandb/
+runs/
+logs/
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Segreti e percorsi macchina (chiavi cloud, token HF, .env reale)
+.env
+.env.*
+
+# Claude
+.claude
+CLAUDE.md
+docs

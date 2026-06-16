@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: "Melix — un Large Language Model costruito da zero"
+message: "Se usi Melix nella tua ricerca, cita questo lavoro."
+type: software
+authors:
+  - given-names: Riccardo
+    family-names: Civiero
+license: Apache-2.0
+repository-code: "https://github.com/<org>/melix"
+url: "https://github.com/<org>/melix"
+keywords:
+  - large language model
+  - llm from scratch
+  - decoder-only transformer
+  - italian nlp
+  - open weights

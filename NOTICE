@@ -1,0 +1,14 @@
+Melix
+Copyright 2026 Riccardo Civiero
+
+This product includes software developed for the Melix project
+(https://github.com/<org>/melix).
+
+Licensed under the Apache License, Version 2.0. See the LICENSE file.
+
+--- Attribuzioni / provenienza ---
+
+Architettura ispirata a modelli decoder-only open (LLaMA-style: RMSNorm, RoPE,
+SwiGLU, GQA). I dataset di pretraining/fine-tuning eventualmente usati restano
+soggetti alle LORO licenze originali: vedi la model card di ogni release
+(docs/model-card-template.md) per la provenienza dati specifica.

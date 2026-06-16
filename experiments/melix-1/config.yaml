@@ -1,0 +1,55 @@
+# melix-1 — Proof of life (sul Mac, ~6M parametri, gratis)
+# Scopo: chiudere TUTTO il giro (tokenizer→pretrain→sample) su scala minuscola in locale.
+# Successo = loss che scende + overfit-1-batch verde + sample plausibile. Niente cloud.
+# Genera/aggiorna con: MelixConfig(...).to_yaml("experiments/melix-1/config.yaml")
+
+name: melix-1
+seed: 1337
+
+# architettura (piccola: deve girare su M1 MPS in minuti)
+vocab_size: 8000
+hidden_size: 256
+num_layers: 6
+num_heads: 8
+num_kv_heads: 2
+intermediate_size: 0        # 0 → calcolato da ff_mult
+ff_mult: 2.6666667
+block_size: 512
+rope_theta: 10000.0
+dropout: 0.0
+tied_embeddings: true
+norm_eps: 1.0e-5
+
+# pretraining (corto: è un proof-of-life)
+pt_micro_batch: 16
+pt_grad_accum: 8
+pt_max_steps: 5000
+pt_lr: 4.0e-4
+pt_min_lr: 4.0e-5
+pt_warmup_steps: 200
+pt_weight_decay: 0.1
+pt_betas: [0.9, 0.95]
+pt_grad_clip: 1.0
+pt_eval_interval: 250
+pt_ckpt_interval: 500
+
+# SFT (per ora opzionale a questa scala)
+sft_micro_batch: 4
+sft_grad_accum: 8
+sft_epochs: 3
+sft_lr: 1.5e-5
+sft_warmup_steps: 50
+
+use_dpo: false
+dpo_beta: 0.1
+dpo_lr: 1.0e-6
+dpo_epochs: 1
+
+onnx_opset: 18
+
+paths:
+  tokenizer: tokenizer/bpe.model
+  pretrain_data: data/pretrain
+  sft_data: data/sft.jsonl
+  dpo_data: data/dpo.jsonl
+  checkpoints: checkpoints
