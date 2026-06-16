@@ -49,3 +49,6 @@ logs/
 .claude
 CLAUDE.md
 docs
+# Local working notes (per-developer iterations & fixes)
+/iterazioni
+/fix

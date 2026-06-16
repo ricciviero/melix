@@ -32,6 +32,7 @@ melix/
 ├── melix/                  # package: il codice condiviso (modello, training, dati…)
 │   ├── config.py           # la "ricetta" come dataclass (architettura + iperparametri)
 │   ├── model.py            # transformer stile Llama (v0 di riferimento)
+│   ├── paths.py            # percorsi storage (dati su disco esterno via .env)
 │   ├── tokenizer.py        # train/load SentencePiece          [stub → da implementare]
 │   ├── data.py             # streaming + shard binari uint16   [stub]
 │   ├── train.py            # loop di pretraining                [stub]
