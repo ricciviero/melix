@@ -4,6 +4,8 @@
 
 **Melix** è un laboratorio di ricerca per progettare, addestrare e servire un Large Language Model **open**, **da zero**, versione dopo versione (`melix-1`, `melix-2`, …). Obiettivo doppio: **imparare** come nasce davvero un LLM e **produrre** modelli funzionanti, scalando di taglia a ogni iterazione. Codice su **GitHub**, pesi su **Hugging Face** — entrambi sotto **Apache-2.0**.
 
+> **Direzione di ricerca**: un LLM **in italiano** che incarna una **voce/carattere** (persona "Melissa", open, con consenso, **senza dati sensibili**) e — alla scala giusta — **modula le emozioni** (valenza/arousal) ispirandosi al paper *Emotion Concepts and their Function in a Large Language Model* (Transformer Circuits, 2026). Tre livelli: **lingua** (pretraining) → **persona** (SFT) → **emozioni** (steering).
+
 Architettura di riferimento: **decoder-only transformer stile Llama** (RMSNorm · RoPE · SwiGLU · GQA · tied embeddings), tokenizer SentencePiece BPE, export ONNX per il serving.
 
 > Sviluppo assistito da **Claude Code** con la skill globale **`melix-llm-lab`** (in `~/.claude/skills/`), che fa da partner tecnico: conosce la pipeline, i tool locali/cloud e i vincoli dell'hardware.
