@@ -7,11 +7,11 @@
 - Hardware: solo Mac (MPS/CPU). **Niente cloud.**
 
 ## Definition of Done
-- [ ] tokenizer SentencePiece addestrato (`tokenizer/bpe.model`)
-- [ ] shard di pretrain creati (uint16)
+- [x] tokenizer SentencePiece addestrato (italiano, vocab 8000) — iter. 02, 2026-06-17
+- [x] shard di pretrain creati (uint16) — iter. 03, Wikipedia IT 32,5M token
 - [x] **overfit-1-batch verde** (`python -m melix.model` → loss → ~0) — fatto 2026-06-16, loss 5.54→0.0145
-- [ ] pretrain breve con **loss che scende** (parte da ~ln(8000)≈9.0)
-- [ ] `sample.py` genera testo plausibile (anche sgrammaticato: è ~6M)
+- [x] pretrain breve con **loss che scende** (parte da ~ln(8000)≈9.0) — iter. 04, 9.03→5.48 (val 5.27)
+- [ ] `sample.py` genera testo plausibile (anche sgrammaticato: è ~6M) — iter. 05
 
 ## Come si lancia (quando i moduli sono implementati)
 ```bash

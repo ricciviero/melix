@@ -35,13 +35,13 @@ melix/
 │   ├── config.py           # la "ricetta" come dataclass (architettura + iperparametri)
 │   ├── model.py            # transformer stile Llama (v0 di riferimento)
 │   ├── paths.py            # percorsi storage (dati su disco esterno via .env)
-│   ├── tokenizer.py        # train/load SentencePiece          [stub → da implementare]
-│   ├── data.py             # streaming + shard binari uint16   [stub]
-│   ├── train.py            # loop di pretraining                [stub]
-│   ├── sft.py              # fine-tuning supervisionato         [stub]
-│   ├── dpo.py              # preferenze (opzionale)             [stub]
-│   ├── sample.py           # generazione/inferenza             [stub]
-│   └── export.py           # export ONNX                       [stub]
+│   ├── tokenizer.py        # train/load SentencePiece (italiano) [✓]
+│   ├── data.py             # streaming + shard binari uint16    [✓]
+│   ├── train.py            # loop di pretraining + overfit       [✓]
+│   ├── sft.py              # fine-tuning supervisionato          [stub]
+│   ├── dpo.py              # preferenze (opzionale)              [stub]
+│   ├── sample.py           # generazione/inferenza              [stub]
+│   └── export.py           # export ONNX                        [stub]
 ├── experiments/            # un esperimento per versione (solo config + note + esiti)
 │   └── melix-1/            # v1: proof-of-life (~10M) sul Mac
 ├── eval/                   # harness di valutazione
@@ -65,7 +65,7 @@ pip install -r requirements-mac.txt
 
 ## Stato
 
-🟢 Scaffold creato. Codice dei moduli `melix/` = **da implementare** (stub con specifica), guidato dalla skill. Inizia da `experiments/melix-1/README.md`.
+🟢 Pipeline melix-1 in costruzione: `config` · `model` (validato, overfit-1-batch) · `tokenizer` (BPE italiano) · `data` (shard uint16) · `train` (pretrain su MPS) sono **reali e validati**. Mancano `sample` (generazione, chiude melix-1), poi `sft`/`dpo`/`export`. Modello, dati e pesi pesanti restano fuori dal repo (vedi `.gitignore`).
 
 ## Dove studiare
 
