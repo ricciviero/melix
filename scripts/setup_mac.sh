@@ -36,4 +36,4 @@ python melix/config.py
 echo "→ percorsi di storage (dati pesanti su disco esterno):"
 python melix/paths.py
 
-echo "OK. Prossimo: 'python melix/model.py' per l'overfit-1-batch, poi experiments/melix-1."
+echo "OK. Prossimo: 'python -m melix.model' per l'overfit-1-batch, poi experiments/melix-1."

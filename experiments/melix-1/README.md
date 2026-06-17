@@ -9,14 +9,14 @@
 ## Definition of Done
 - [ ] tokenizer SentencePiece addestrato (`tokenizer/bpe.model`)
 - [ ] shard di pretrain creati (uint16)
-- [ ] **overfit-1-batch verde** (`python melix/model.py` → loss → ~0)
+- [x] **overfit-1-batch verde** (`python -m melix.model` → loss → ~0) — fatto 2026-06-16, loss 5.54→0.0145
 - [ ] pretrain breve con **loss che scende** (parte da ~ln(8000)≈9.0)
 - [ ] `sample.py` genera testo plausibile (anche sgrammaticato: è ~6M)
 
 ## Come si lancia (quando i moduli sono implementati)
 ```bash
 cd ~/Desktop/REPO/melix && source .venv/bin/activate
-python melix/model.py                      # sanity: overfit-1-batch
+python -m melix.model                      # sanity: overfit-1-batch (i moduli con import di pacchetto vanno con -m)
 # poi: tokenizer → data → train → sample, guidati dalla skill melix-llm-lab
 ```
 
