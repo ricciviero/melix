@@ -107,7 +107,8 @@ def get_batch(
     x = torch.stack([torch.from_numpy(data[i : i + block_size].astype(np.int64)) for i in ix])
     y = torch.stack([torch.from_numpy(data[i + 1 : i + 1 + block_size].astype(np.int64)) for i in ix])
     if device != "cpu":
-        x, y = x.pin_memory().to(device, non_blocking=True), y.pin_memory().to(device, non_blocking=True)
+        # niente pin_memory(): è una primitiva CUDA, su MPS/Apple Silicon non si applica
+        x, y = x.to(device), y.to(device)
     return x, y
 
 
